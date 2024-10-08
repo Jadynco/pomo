@@ -1,38 +1,59 @@
+
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
   flex-direction: column;
-  align-items: center;
+  display: flex;           /* Enables Flexbox */
+  justify-content: center; /* Centers the links horizontally */
+  background-color: #cdc4a4;
+  height: 100vh;           /* Makes nav-bar take up the full height of the viewport */
+}
+
+.navbar{
+margin:0 auto;
+max-width:500px ;
+width:100%;
+padding:100px;
+display:flex;
+justify-content: space-between;
+text-align: center;
+}
+
+.navbar a{
+ 
+  font-size: 20px;
+  text-decoration: none;
+  color:rgb(0, 0, 0);
+}
+
+body {
+  color: #000000;
+  height: 100vh;
+  font-family: "Roboto Mono", monospace;
+}
+
+.main {
+  font-family:sans-serif;
+  font-size: 6em;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.control{
+  display: flex;
+  justify-content: center;
+  padding:10px;
+}
+button{
+  margin:10px;
+  color:#000000;
+  background-color: #cdc4a4;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message {
+  font-size: 0.5em;
+  min-height: 1.3em;
+  margin-bottom: 0.5em;
 }
