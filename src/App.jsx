@@ -7,6 +7,7 @@ import Stopwatch from "./stopwatch";
 function App() {
   return (
     <Router>
+      <div className="logo">Pomodoro</div>
       <div className="App">
         <nav className= "navbar">
           <Link to="/pomodoro">Pomodoro</Link>

@@ -1,11 +1,19 @@
 
+*{
+  background-color: #cdc4a4;
+}
 
 .App {
   flex-direction: column;
   display: flex;           /* Enables Flexbox */
   justify-content: center; /* Centers the links horizontally */
-  background-color: #cdc4a4;
   height: 100vh;           /* Makes nav-bar take up the full height of the viewport */
+}
+
+.logo{
+  padding:25px;
+  font-size: 30px;
+  font-family:'Times New Roman', Times, serif;
 }
 
 .navbar{

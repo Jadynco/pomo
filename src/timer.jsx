@@ -33,6 +33,11 @@ export default function Timer (){
   <div className="control">
       <button onClick={() => setActive(true)}>Start</button>
       <button onClick={() => setActive(false)}>Stop</button>
+      <button onClick={() =>{
+          setActive(false);
+          setSeconds(0);
+          setMinutes(25);
+        }}>Reset</button>
    </div>
 </div>
 

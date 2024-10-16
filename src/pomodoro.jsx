@@ -45,7 +45,13 @@ export default function Pomodoro() {
       <div className= "control">
         <button onClick={() => setActive(true)}>start</button>
         <button onClick={() => setActive(false)}>stop</button>
+        <button onClick={() =>{
+          setActive(false);
+          setSeconds(0);
+          setMinutes(25);
+        }}>Reset</button>
+        
+        </div>
       </div>
-    </div>
   );
 }
