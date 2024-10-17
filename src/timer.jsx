@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import SetModal from "./setModal"
+
 export default function Timer (){
    const [minutes, setMinutes] = useState(25);
    const [seconds, setSeconds] = useState(0);
@@ -38,6 +40,9 @@ export default function Timer (){
           setSeconds(0);
           setMinutes(25);
         }}>Reset</button>
+   </div>
+   <div className= "modal">
+      <SetModal></SetModal>
    </div>
 </div>
 
