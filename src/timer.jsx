@@ -1,35 +1,73 @@
 import React, { useState, useEffect } from "react";
+import chime from './chime.wav'
 import SetModal from "./setModal"
 
 export default function Timer (){
-   const [minutes, setMinutes] = useState(25);
+   const [minutes, setMinutes] = useState(30);
+   const [tminutes, setTminutes] = useState(30);
    const [seconds, setSeconds] = useState(0);
+   const [tseconds, setTseconds] = useState(0);
+   const [hours, setHours] = useState(0)
+   const [thours, setThours] = useState(0)
    const [active, setActive]= useState(false);
+   const [show, setShow]= useState(false);   
+   const [chimeAudio] = useState(()=> new Audio(chime));
+
+   useEffect(()=>{
+      setMinutes(tminutes);
+      setSeconds(tseconds);
+      setHours(thours);
+   },[tminutes,tseconds,thours])
 
    useEffect(() =>{
       let interval =null;
+
       if(active){
          interval = setInterval(() =>{
-            
+
+            if(seconds===0 && minutes===0 && hours===0){
+               chimeAudio.play();
+               setActive(false);
+            }
+      
             if(seconds === 0){
+
+               if(minutes > 0){
                setSeconds(59);
-               if(minutes !== 0){
-                setMinutes(minutes-1);
-               }
-            }
+               setMinutes(prevMinutes => prevMinutes -1);
+               } 
+
+               else if(hours > 0){
+                  setHours(prevHours => prevHours -1);
+                  setMinutes(59);
+                  setSeconds(59);
+                     }
+                  }
+               
+            
             else{
-               setSeconds(seconds-1);
+               setSeconds(prevSeconds => prevSeconds-1);
             }
+
          }, 1000);
       }
       return () => clearInterval(interval);
-   },[seconds,minutes,active]);
+   },[hours,seconds,minutes,active,chimeAudio]);
 
   return(
 <div>
    <div className="main">
+     {hours > 0 ? (hours < 10 ? `0${hours}:` : `${hours}:`):``}
      {minutes < 10 ? `0${minutes}`: minutes}:
      {seconds < 10 ? `0${seconds}`: seconds}
+   </div>
+
+   <div className= "set">
+      <button onClick={() => {
+         chimeAudio.play();
+         setShow(true)
+         setActive(false)
+         }}>set</button>
    </div>
   
   <div className="control">
@@ -37,12 +75,18 @@ export default function Timer (){
       <button onClick={() => setActive(false)}>Stop</button>
       <button onClick={() =>{
           setActive(false);
-          setSeconds(0);
-          setMinutes(25);
+          setSeconds(tseconds);
+          setMinutes(tminutes);
+          setHours(thours);
         }}>Reset</button>
    </div>
    <div className= "modal">
-      <SetModal></SetModal>
+      {show && <SetModal 
+         setShow={setShow} tseconds={tseconds}
+         setTminutes={setTminutes} tminutes={tminutes}
+         setThours={setThours} thours={thours}
+         setTseconds={setTseconds}>
+         </SetModal>}
    </div>
 </div>
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useSound from 'use-sound';
 
 export default function Pomodoro() {
   const [minutes, setMinutes] = useState(25);
@@ -44,7 +45,7 @@ export default function Pomodoro() {
       </div>
       <div className= "control">
         <button onClick={() => setActive(true)}>start</button>
-        <button onClick={() => setActive(false)}>stop</button>
+        <button onClick={() => setActive(false)}>Pause</button>
         <button onClick={() =>{
           setActive(false);
           setSeconds(0);
