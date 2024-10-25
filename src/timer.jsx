@@ -11,7 +11,7 @@ export default function Timer (){
    const [thours, setThours] = useState(0)
    const [active, setActive]= useState(false);
    const [show, setShow]= useState(false);   
-   const [chimeAudio] = useState(()=> new Audio(chime));
+   const chimeAudio = new Audio(chime);
 
    useEffect(()=>{
       setMinutes(tminutes);
@@ -24,11 +24,7 @@ export default function Timer (){
 
       if(active){
          interval = setInterval(() =>{
-
-            if(seconds===0 && minutes===0 && hours===0){
-               chimeAudio.play();
-               setActive(false);
-            }
+           
       
             if(seconds === 0){
 
@@ -49,6 +45,13 @@ export default function Timer (){
                setSeconds(prevSeconds => prevSeconds-1);
             }
 
+            if(seconds<2 && minutes<1 && hours<1){
+               chimeAudio.play();
+               setActive(false)
+               clearInterval(interval)
+              
+            }
+
          }, 1000);
       }
       return () => clearInterval(interval);
@@ -64,7 +67,7 @@ export default function Timer (){
 
    <div className= "set">
       <button onClick={() => {
-         chimeAudio.play();
+   
          setShow(true)
          setActive(false)
          }}>set</button>
