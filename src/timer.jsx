@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import chime from './chime.wav'
 import SetModal from "./setModal"
 
-export default function Timer (){
+export default function Timer ({setRblur}){
    const [minutes, setMinutes] = useState(30);
    const [tminutes, setTminutes] = useState(30);
    const [seconds, setSeconds] = useState(0);
@@ -17,7 +17,8 @@ export default function Timer (){
       setMinutes(tminutes);
       setSeconds(tseconds);
       setHours(thours);
-   },[tminutes,tseconds,thours])
+      setRblur(show);
+   },[tminutes,tseconds,thours,show])
 
    useEffect(() =>{
       let interval =null;
@@ -59,6 +60,7 @@ export default function Timer (){
 
   return(
 <div>
+<div className ={`timer ${show ? 'blur' : ''}`}>
    <div className="main">
      {hours > 0 ? (hours < 10 ? `0${hours}:` : `${hours}:`):``}
      {minutes < 10 ? `0${minutes}`: minutes}:
@@ -83,7 +85,9 @@ export default function Timer (){
           setHours(thours);
         }}>Reset</button>
    </div>
-   <div className= "modal">
+
+</div>
+<div className= "modal">
       {show && <SetModal 
          setShow={setShow} tseconds={tseconds}
          setTminutes={setTminutes} tminutes={tminutes}
@@ -92,7 +96,6 @@ export default function Timer (){
          </SetModal>}
    </div>
 </div>
-
 
 );
 }

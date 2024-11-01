@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import useSound from 'use-sound';
+import chime from './chime.wav'
 
 export default function Pomodoro() {
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
-  const [active, setActive]= useState(false)
+  const [active, setActive]= useState(false);
+  const chimeAudio = new Audio(chime);
 
   useEffect(() => {
     let interval = null;
@@ -19,6 +20,7 @@ export default function Pomodoro() {
             setSeconds(59);
             setMinutes(minutes - 1);
           } else {
+            chimeAudio.play(0);
             let minutes = displayMessage ? 24 : 4;
             let seconds = 59;
 

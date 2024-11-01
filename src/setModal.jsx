@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X } from 'lucide-react';
+
 
 
 export default function SetModal({setShow, setTminutes, setTseconds, tseconds, tminutes, setThours,thours}){
@@ -61,16 +61,9 @@ const changeHours = (e) =>{
 return(
     
     <div className="setdiv">
-    <button onClick={() => {
-        setShow(false)
-        {tempminutes !== '' ? setTminutes(tempminutes): setTminutes(0)}
-        {tempseconds !== '' ? setTseconds(tempseconds) : setTseconds(0)}
-        {tempseconds !== '' ? setThours(temphours) : setThours(0)}
-        
-        }}><X/></button>
 
     <label>
-       <br/>Hours
+       Hours 
         <input
             type="number"
             value={temphours}
@@ -96,6 +89,14 @@ return(
                 onChange={changeSeconds}
             ></input>
         </label>
+
+        <button onClick={() => {
+        setShow(false)
+        {tempminutes !== '' ? setTminutes(tempminutes): setTminutes(0)}
+        {tempseconds !== '' ? setTseconds(tempseconds) : setTseconds(0)}
+        {tempseconds !== '' ? setThours(temphours) : setThours(0)}
+        
+        }}>set</button>
     </div>
 )
 }
