@@ -44,7 +44,7 @@ body {
   font-family:sans-serif;
   font-size: 8em;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -74,8 +74,9 @@ body {
 }
 
 .setdiv{
-  align-items: flex-end;
-  text-align: left;
+  width:50%;
+  max-width: 300px;
+  height: auto;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -88,21 +89,35 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+
 .blur{
   filter:blur(8px);
 }
-.setdiv label {
-  padding:5px;
+.setdiv label{
   background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.setdiv p{
+  width: 75px;
+  background-color: white;
+  text-align: center;
+}
+
+.setdiv input{
+  background-color: rgb(238, 232, 232);
+  height: 20px;
+  width: 100px;
 }
 
 .setdiv button{
-  margin:5px;
+  margin:20px;
   background-color: white;
 }
 
 .message {
-  font-size: 0.5em;
-  min-height: 1.3em;
+  font-size: 0.1em;
   margin-bottom: 0.5em;
 }

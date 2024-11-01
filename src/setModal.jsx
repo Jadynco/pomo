@@ -61,9 +61,9 @@ const changeHours = (e) =>{
 return(
     
     <div className="setdiv">
-
+    
     <label>
-       Hours 
+       <p>Hours</p>
         <input
             type="number"
             value={temphours}
@@ -72,7 +72,7 @@ return(
     </label>
 
       <label>
-        Minutes
+        <p>Minutes</p>
         <input
             type="number"
             value={tempminutes}
@@ -81,8 +81,9 @@ return(
         ></input>
         </label>
 
+
         <label>
-            Seconds
+        <p>Seconds</p>
             <input
                 type="number"
                 value={tempseconds}

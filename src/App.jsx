@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, Navigate} from "react-router-dom";
 import './App.css';
 import React, { useState } from 'react';
 import Pomodoro from "./pomodoro";
@@ -22,6 +22,7 @@ const [rblur,setRblur]= useState(false);
       </div>
       
         <Routes>
+          <Route path="/" element={<Navigate to="/pomodoro"/>} />
           <Route path="/pomodoro" element={<Pomodoro />} />
           <Route path="/timer" element={<Timer setRblur={setRblur}/>} />
           <Route path="/stopwatch" element={<Stopwatch />} />
