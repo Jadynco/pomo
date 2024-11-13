@@ -16,14 +16,14 @@
 }
 
 .navbar{
-margin:0 auto;
-max-width:500px ;
-width:100%;
-padding-top: 150px;
-padding-bottom:100px;
-display:flex;
-justify-content: space-between;
-text-align: center;
+  margin:0 auto;
+  max-width:500px ;
+  width:100%;
+  padding-top: 150px;
+  padding-bottom:100px;
+  display:flex;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .navbar a{
@@ -47,6 +47,23 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.clock{
+  display: flex;
+  flex-direction: row;
+}
+
+.status1, .status2{
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  justify-content: center;
+}
+
+.status1{
+  text-align: right;
 }
 
 .control{
