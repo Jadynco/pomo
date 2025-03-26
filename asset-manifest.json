@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pomo/static/css/main.c908012b.css",
-    "main.js": "/pomo/static/js/main.272d898e.js",
-    "static/js/453.6456c937.chunk.js": "/pomo/static/js/453.6456c937.chunk.js",
-    "static/media/chime.wav": "/pomo/static/media/chime.490fb663af5fd43718ec.wav",
-    "index.html": "/pomo/index.html",
-    "main.c908012b.css.map": "/pomo/static/css/main.c908012b.css.map",
-    "main.272d898e.js.map": "/pomo/static/js/main.272d898e.js.map",
-    "453.6456c937.chunk.js.map": "/pomo/static/js/453.6456c937.chunk.js.map"
+    "main.css": "/static/css/main.28bf0cb5.css",
+    "main.js": "/static/js/main.343f99bb.js",
+    "static/js/453.6456c937.chunk.js": "/static/js/453.6456c937.chunk.js",
+    "static/media/chime.wav": "/static/media/chime.490fb663af5fd43718ec.wav",
+    "index.html": "/index.html",
+    "main.28bf0cb5.css.map": "/static/css/main.28bf0cb5.css.map",
+    "main.343f99bb.js.map": "/static/js/main.343f99bb.js.map",
+    "453.6456c937.chunk.js.map": "/static/js/453.6456c937.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c908012b.css",
-    "static/js/main.272d898e.js"
+    "static/css/main.28bf0cb5.css",
+    "static/js/main.343f99bb.js"
   ]
 }
