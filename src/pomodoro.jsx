@@ -131,4 +131,4 @@ export default function Pomodoro() {
       
       </div>
       </div>
-  )};
+  )}
