@@ -1,6 +1,6 @@
 import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, Navigate } from "react";
 import Pomodoro from "./pomodoro";
 import Timer from "./timer";
 import Stopwatch from "./stopwatch";
