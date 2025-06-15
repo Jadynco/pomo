@@ -11,6 +11,7 @@ function App() {
 const [rblur,setRblur]= useState(false);
 
   return (
+    <div className="body">
     <Router>
   
       <div className ={`timer ${rblur ? 'blur' : ''}`}>
@@ -30,6 +31,7 @@ const [rblur,setRblur]= useState(false);
         </Routes>
     
     </Router>
+    </div>
   );
 }
 
