@@ -1,10 +1,13 @@
-body {
-  background: linear-gradient(to bottom, #beb595, #e2ddcf);
-  color: #000000;
+html, body {
+  min-height: 100vh;          /* allow it to grow if the page is taller */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #beb595, #e2ddcf) no-repeat fixed;
+  background-size: cover;     /* make the gradient fill the screen */
+  color: #000;
   font-family: "Roboto Mono", monospace;
-  height: 100vh;
-  min-height: 650px;
 }
+
 
 
 .App {
