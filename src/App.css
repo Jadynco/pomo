@@ -275,13 +275,13 @@ html, body {
   }
 }
 
-@media (max-width: 270px) {
+@media (max-width: 389px) {
   .status1,
   .status2 {
     margin: 5px;
     display: flex;
     flex-direction: column;
-    font-size: 4px;
+    font-size: 5px;
     justify-content: center;
   }
 }
